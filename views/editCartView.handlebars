@@ -1,0 +1,34 @@
+<div class="table-responsive">
+  <form method="post" action='/cart/edit'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Product Name: </td>
+          <td>{{data.pname}}</td>
+        </tr>
+        <tr>
+          <th>Quantity: </td>
+          <td><input type="number" name="chosedQuantity" required size="40" 
+                 min="1" max="100" step="1" value='{{data.quantity}}'>
+          </td>
+
+          <td>Max quantity: {{data.maxq}}</td>
+
+        </tr>
+        <input type="hidden" name="pname" value="{{data.pname}}">
+        <input type="hidden" name="pid" value="{{data.id}}">
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="save edit" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelEdit()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>
+

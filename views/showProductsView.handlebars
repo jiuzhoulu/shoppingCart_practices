@@ -1,0 +1,39 @@
+<div>
+	<a href = '/cart'>Shopping Cart</a>
+    <h3>Products</h3>
+	<div class="table-responsive">
+		<table class="table table-condensed">
+			{{#if data}}
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Description</th>
+					<th>price</th>
+                    <th>stockQuantity</th>
+				</tr>
+			</thead>
+			{{else}}
+			<tr><td colspan="3">No product found.</td></tr>
+			{{/if}}
+			<tbody>
+				{{#each data}}
+					<tr>
+						<td>{{this.pname}}</td>
+                        <td>{{this.desc}}</td>
+                        <td>{{this.price}}</td>
+						<td>{{this.quantity}}</td>
+						<td>
+                            <a href="/shop/add/{{this.pid}}/{{this.pname}}/{{this.quantity}}">
+                            Add to cart</a>
+                        </td>
+					</tr>
+				{{/each}}
+			</tbody>
+			<tfooter>
+			</tfooter>
+		</table>
+	</div>
+</div>
+<input type="button" value="Back" class="btn btn-danger"
+                  class="cancel" onclick="backtoHome()">
+

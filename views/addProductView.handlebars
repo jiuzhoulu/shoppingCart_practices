@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <form method="post" action='/shop/save'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Product Name: </td>
+          <td>{{data.pname}}</td>
+        </tr>
+        <tr>
+          <th>Quantity: </td>
+          <td><input type="number" name="chosedQuantity" required size="40" 
+                 min="1" max="{{data.quantity}}" step="1" value="1"></td>
+        </tr>
+        <input type="hidden" name="pname" value="{{data.pname}}">
+        <input type="hidden" name="pid" value="{{data.id}}">
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="Add to cart" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<h2>Admin page</h2>
+
+<h3>Users</h3>
+<div class="table-responsive">
+    <table class="table table-condensed">
+        {{#if data}}
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>password</th>
+                <th>is Admin</th>
+                <th>orders</th>
+            </tr>
+        </thead>
+        {{else}}
+        <a href = "/admin/users">show users</a>
+        {{/if}}
+        <tbody>
+            {{#each data}}
+                <tr>
+                    <td>{{this.userid}}</td>
+                    <td>{{this.pwd}}</td>
+                    <td>{{this.isadmin}}</td>
+                    <td>{{this.orders}}</td>
+                    
+                </tr>
+            {{/each}}
+        </tbody>
+        <tfooter>
+        </tfooter>
+    </table>
+</div>

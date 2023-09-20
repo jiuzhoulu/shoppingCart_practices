@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <form method="post" action="/login">
+    <table class="table table-condensed">
+      <tbody>
+       
+       <tr>
+         <th>User ID: </th>
+         <td><input type="text" name="userid" required 
+              placeholder="Enter user ID"></td>
+       </tr>
+       <tr>
+         <th>Password: </th>
+         <td><input type="password" name="pwd" required 
+              placeholder="Enter password"></td>
+       </tr>
+       
+       </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+           <input type="submit" value="Login" 
+              class="btn btn-success">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>
+<p>{{message}}</p>

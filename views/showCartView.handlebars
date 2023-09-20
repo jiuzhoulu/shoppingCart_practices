@@ -1,0 +1,39 @@
+<form method="post" action='/shop/save'>
+    <div>
+        <h3>Cart</h3>
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                {{#if data}}
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity Chose</th>
+                    </tr> 
+                </thead>
+                {{else}}
+                <tr><td colspan="3">No product found.</td></tr>
+                {{/if}}
+                <tbody>
+                    {{#each data}}
+                        <tr>
+                            <td>{{this.pname}}</td>
+                            <td>{{this.cQuantity}}</td>
+                            <td>
+                                <a href="/cart/edit/{{this.pid}}">Edit</a>
+                                <a href="/cart/delete/{{this.pid}}">Delete</a>
+                            </td>
+                            
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tfooter>
+                </tfooter>
+            </table>
+        </div>
+    </div>
+</form>
+
+
+
+<input type="button" value="Back" class="btn btn-danger"
+                class="cancel" onclick="cancelAdd()">
